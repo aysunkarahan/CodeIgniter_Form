@@ -65,7 +65,7 @@ class form extends CI_Controller {
                 //var_dump($config);
         		$this->insert_model->form_insert($data);
                 
-                $this->load->view('formsucces', $data);
+                $this->load->view('formsucces');
 
 
                 }

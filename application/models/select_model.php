@@ -5,15 +5,14 @@ class select_model extends CI_Model{
  	}
 
  	function select($data){
- 	 $query = $this ->db-> select('id')
-       -> where('email', $data)
-       -> limit(1)
+ 	 $query = $this ->db-> select('*')
+       -> where('email', $data)       
        -> get('bir')
-       -> result_array()[0]['id'];
-       if($query){
-       	return 1;
+       -> result_array();
+       if(count($query[0])<1){
+       	return 0;
        }else{
-       	return false;
+       	return 1;
        }
        
  	}
